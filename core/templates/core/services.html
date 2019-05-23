@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+{% block title %}
+  <title>Services | La Caffettiera</title>
+{% endblock title %}
+{% block content %}
+    <section class="page-section">
+      <div class="container">
+          {% for proyecto in proyectos %}
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex mr-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">{{proyecto.descripcion}}</span>
+                <span class="section-heading-lower">{{proyecto.titulo}}</span>
+              </h2>
+            </div>
+          </div>
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{proyecto.imagen.url}}" alt="">
+          <div class="product-item-description d-flex ml-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">{{proyecto.contenido}}</p>
+            </div>
+          </div>
+        </div>
+          {% endfor %}
+      </div>
+    </section>
+{% endblock content %}
